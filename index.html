@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__left">
+      <a href="#" class="navbar__logo">
+        <svg viewBox="0 0 111 30" aria-hidden="true" focusable="false" class="logo-svg">
+          <path d="M105.06 0l-14.13 39.84L76.8 0H65.4l19.1 53.87c-1.98 5.57-3.82 7.13-8.1 7.13-1.33 0-2.62-.13-3.9-.4l-1.62 9.42c1.9.43 3.9.66 5.98.66 9.6 0 14.97-4.6 19.34-16.77L111 0h-5.94zM15.4 19.44v.01h.04L26.53 0H16.24L9.47 12.73 2.7 0H0l.01 53.28H9.5V16.4l9.4 14.17 9.52-14.17v36.88h9.46V0h-2.45L15.4 19.44zm50.16-9.95V0H36.33v53.28h9.46V32.22h17.67v-9.49H45.79V9.49h19.77z" fill="#E50914"/>
+        </svg>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New &amp; Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </div>
+    <div class="navbar__right">
+      <button class="navbar__search-btn" id="searchToggle" aria-label="Search">
+        <i class="fa fa-search"></i>
+      </button>
+      <div class="navbar__search" id="searchBox">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Titles, people, genres" id="searchInput" />
+      </div>
+      <a href="#" class="navbar__notifications" aria-label="Notifications">
+        <i class="fa fa-bell"></i>
+      </a>
+      <div class="navbar__profile">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile" class="navbar__avatar" />
+        <i class="fa fa-caret-down"></i>
+        <div class="navbar__dropdown">
+          <a href="#">Manage Profiles</a>
+          <a href="#">Account</a>
+          <a href="#">Help Centre</a>
+          <hr />
+          <a href="#">Sign out of Netflix</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__content">
+      <h1 class="hero__title" id="heroTitle">Stranger Things</h1>
+      <p class="hero__description" id="heroDesc">
+        When a boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.
+      </p>
+      <div class="hero__badges">
+        <span class="badge badge--new">New Season</span>
+        <span class="badge badge--rating">TV-14</span>
+      </div>
+      <div class="hero__buttons">
+        <button class="btn btn--play" id="heroPlayBtn">
+          <i class="fa fa-play"></i> Play
+        </button>
+        <button class="btn btn--info" id="heroInfoBtn">
+          <i class="fa fa-info-circle"></i> More Info
+        </button>
+      </div>
+    </div>
+    <div class="hero__fade"></div>
+  </section>
+
+  <!-- Movie Rows -->
+  <main class="main-content">
+    <div id="movieRows"></div>
+  </main>
+
+  <!-- Video Preview Modal -->
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__container">
+      <button class="modal__close" id="modalClose" aria-label="Close">
+        <i class="fa fa-times"></i>
+      </button>
+      <div class="modal__video-wrapper">
+        <video class="modal__video" id="modalVideo" controls autoplay>
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="modal__info">
+        <div class="modal__header">
+          <div class="modal__header-left">
+            <h2 class="modal__title" id="modalTitle">Title</h2>
+            <div class="modal__meta">
+              <span class="modal__match" id="modalMatch">97% Match</span>
+              <span class="modal__year" id="modalYear">2022</span>
+              <span class="modal__rating" id="modalRating">TV-14</span>
+              <span class="modal__seasons" id="modalSeasons">4 Seasons</span>
+            </div>
+          </div>
+          <div class="modal__header-right">
+            <button class="modal__icon-btn" aria-label="Add to My List">
+              <i class="fa fa-plus"></i>
+            </button>
+            <button class="modal__icon-btn" aria-label="Like">
+              <i class="fa fa-thumbs-up"></i>
+            </button>
+            <button class="modal__icon-btn" aria-label="Share">
+              <i class="fa fa-share"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal__body">
+          <p class="modal__description" id="modalDesc">Description goes here.</p>
+        </div>
+        <div class="modal__footer">
+          <div class="modal__footer-item">
+            <span class="modal__label">Cast:</span>
+            <span class="modal__value" id="modalCast">—</span>
+          </div>
+          <div class="modal__footer-item">
+            <span class="modal__label">Genres:</span>
+            <span class="modal__value" id="modalGenre">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
