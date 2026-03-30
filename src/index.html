@@ -1,221 +1,482 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="description" content="Watch TV shows and movies online. Watch here for free!" />
-    <meta name="author" content="Netflix India" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Watch unlimited movies, TV shows, and more. Stream your favorite entertainment anywhere, anytime."
+    />
+    <meta name="author" content="Netflix Clone" />
+    <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
 
     <link rel="shortcut icon" href="./assets/icons/netflix-logo.svg" type="image/x-icon" />
-    <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
 
     <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="https://kit.fontawesome.com/59965007f8.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <nav class="navbar">
-          <a href="./index.html" class="logo">
-            <img src="./assets/images/logo.png" width="190" alt="" />
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__wrapper">
+          <a href="index.html" class="navbar__logo">
+            <img src="./assets/images/logo.png" alt="Netflix Logo" class="navbar__logo-img" />
           </a>
-          <ul class="nav-list">
-            <li class="nav-item">
-              <select name="language" id="lang">
-                <option value="eng">English</option>
-                <option value="hindi">Hindi</option>
-              </select>
+
+          <ul class="navbar__menu">
+            <li class="navbar__item navbar__item--dropdown">
+              <button class="navbar__button navbar__button--language" id="languageToggle">
+                <i class="fas fa-globe-americas"></i>
+                <span class="navbar__text">English</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <ul class="navbar__dropdown" id="languageMenu">
+                <li class="navbar__dropdown-item">
+                  <a href="#" data-lang="en" class="navbar__dropdown-link"> English </a>
+                </li>
+                <li class="navbar__dropdown-item">
+                  <a href="#" data-lang="hi" class="navbar__dropdown-link"> Hindi </a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item"><button class="signin-btn">Sign In</button></li>
+
+            <li class="navbar__item">
+              <button class="button button--primary button--signin">Sign In</button>
+            </li>
           </ul>
-        </nav>
-      </header>
-      <main>
-        <section id="hero">
-          <div class="hero-content">
-            <h1 class="hero-title">Unlimited movies, TV shows, and more.</h1>
-            <p class="hero-description">Watch anywhere. Cancel anytime.</p>
-            <p class="membership-description">
-              Ready to watch? Enter your email to create or restart your membership.
-            </p>
-            <div class="form">
-              <input type="email" name="mail" id="mail" placeholder="Email address" />
-              <button class="cta-btn">Get Started</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <h1 class="hero__title">Unlimited movies, shows, and more</h1>
+          <p class="hero__subtitle">Starts at ₹149. Cancel at any time.</p>
+          <p class="hero__description">
+            Ready to watch? Enter your email to create or restart your membership.
+          </p>
+          <form class="hero__form" method="post">
+            <div class="form-group__inline">
+              <div class="form-field">
+                <input
+                  type="email"
+                  class="input input--email"
+                  id="heroEmail"
+                  placeholder=" "
+                  required
+                  aria-label="Email address"
+                />
+                <label for="heroEmail" class="form-field__label">Email Address</label>
+              </div>
+              <button type="submit" class="button button--primary button--large">
+                Get Started
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-wrapper">
+          <h2 class="section-title">Trending Now</h2>
+          <div class="carousel-container">
+            <ul class="carousel-list">
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie0.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie1.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie2.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie3.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie4.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie5.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie6.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie7.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie8.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="carousel-item">
+                <article class="movie-card">
+                  <img
+                    src="./assets/images/movie9.webp"
+                    alt="Movie Title"
+                    class="movie-card__image"
+                  />
+                  <div class="movie-card__overlay">
+                    <button class="movie-card__play-btn" aria-label="Play movie">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                </article>
+              </li>
+            </ul>
           </div>
-        </section>
-        <section id="trending">
-          <h2 class="movie-list-title">Trending Now</h2>
-          <ul class="movie-list">
-            <li class="movie-item" id="movie0"><img src="./assets/images/movie0.webp" alt="" /></li>
-            <li class="movie-item" id="movie1"><img src="./assets/images/movie1.webp" alt="" /></li>
-            <li class="movie-item" id="movie2"><img src="./assets/images/movie2.webp" alt="" /></li>
-            <li class="movie-item" id="movie3"><img src="./assets/images/movie3.webp" alt="" /></li>
-            <li class="movie-item" id="movie4"><img src="./assets/images/movie4.webp" alt="" /></li>
-            <li class="movie-item" id="movie5"><img src="./assets/images/movie5.webp" alt="" /></li>
-            <li class="movie-item" id="movie6"><img src="./assets/images/movie6.webp" alt="" /></li>
-            <li class="movie-item" id="movie7"><img src="./assets/images/movie7.webp" alt="" /></li>
-            <li class="movie-item" id="movie8"><img src="./assets/images/movie8.webp" alt="" /></li>
-            <li class="movie-item" id="movie9"><img src="./assets/images/movie9.webp" alt="" /></li>
-          </ul>
-        </section>
-        <section id="mrtj">
-          <h2 class="movie-list-title">More reasons to join</h2>
-          <div class="mrtj-content">
-            <div class="mrtj-item">
-              <h3 class="mrtj-title">Enjoy on your TV.</h3>
-              <p class="mrtj-description">
-                Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and
-                more.
+        </div>
+      </section>
+
+      <section class="content-section content-section--accent">
+        <div class="section-wrapper">
+          <h2 class="section-title">More Reasons to Join</h2>
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-card__icon">
+                <i class="fas fa-tv"></i>
+              </div>
+              <h3 class="feature-card__title">Enjoy on your TV</h3>
+              <p class="feature-card__description">
+                Watch on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, and more.
               </p>
-              <div class="icon"></div>
-            </div>
-            <div class="mrtj-item">
-              <h3 class="mrtj-title">Download your shows to watch offline.</h3>
-              <p class="mrtj-description">
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon">
+                <i class="fas fa-download"></i>
+              </div>
+              <h3 class="feature-card__title">Download your shows to watch offline</h3>
+              <p class="feature-card__description">
                 Save your favorites easily and always have something to watch.
               </p>
-              <div class="icon"></div>
-            </div>
-            <div class="mrtj-item">
-              <h3 class="mrtj-title">Watch anywhere.</h3>
-              <p class="mrtj-description">
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3 class="feature-card__title">Watch anywhere</h3>
+              <p class="feature-card__description">
                 Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
               </p>
-              <div class="icon"></div>
-            </div>
-            <div class="mrtj-item">
-              <h3 class="mrtj-title">Create profiles for children.</h3>
-              <p class="mrtj-description">
-                Send children on adventures with their favorite characters in a space made just for
-                them—free with your membership.
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-card__icon">
+                <i class="fas fa-child"></i>
+              </div>
+              <h3 class="feature-card__title">Create profiles for children</h3>
+              <p class="feature-card__description">
+                Send kids on adventures with their favorite characters in their own space.
               </p>
-              <div class="icon"></div>
-            </div>
+            </article>
           </div>
-        </section>
-        <section id="faq">
-          <h2 class="faq-title">Frequently Asked Questions</h2>
-          <div class="faq-content">
-            <div class="faq-item">
-              <h3 class="faq-question">What is Netflix?</h3>
-              <p class="faq-answer">
-                Netflix is a streaming service that offers a wide variety of award-winning TV shows,
-                movies, anime, documentaries and more – on thousands of internet-connected devices.
-                <br />
-                You can watch as much as you want, whenever you want, without a single ad – all for
-                one low monthly price. There's always something new to discover, and new TV shows
-                and movies are added every week!
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3 class="faq-question">How much does Netflix cost?</h3>
-              <p class="faq-answer">
-                Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all
-                for one fixed monthly fee. Plans range from ₹149 to ₹649/month.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3 class="faq-question">Where can I watch?</h3>
-              <p class="faq-answer">
-                Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the
-                web at netflix.com from your personal computer or on any internet-connected device
-                that offers the Netflix app, including smart TVs, smartphones, tablets, streaming
-                media players and game consoles.
-                <br />
-                You can also download your favorite shows with the iOS or Android app. Use downloads
-                to watch while you're on the go and without an internet connection. Take Netflix
-                with you anywhere.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3 class="faq-question">How do I cancel?</h3>
-              <p class="faq-answer">
-                Netflix is flexible. You can easily cancel your account online in two clicks. There
-                are no cancellation fees – start or stop your account anytime.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3 class="faq-question">Where can I watch on Netflix?</h3>
-              <p class="faq-answer">
-                Netflix has an extensive library of feature films, documentaries, shows, anime,
-                award-winning Netflix originals, and more. Watch as much as you want, anytime you
-                want.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3 class="faq-question">Is Netflix good for kids?</h3>
-              <p class="faq-answer">
-                The Netflix Kids experience is included in your membership to give parents control
-                while kids enjoy family-friendly TV shows and films in their own space.
-                <br />
-                Kids profiles come with PIN-protected parental controls that let you restrict the
-                maturity rating of content kids can watch and block specific titles you don’t want
-                kids to see.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section id="cta">
-          <div class="form">
-            <h2 class="cta-title">
-              Ready to watch? Enter your email to create or restart your membership.
-            </h2>
-            <div class="form-content">
-              <input type="email" name="mail" id="mail" placeholder="Email address" />
-              <button class="cta-btn">Get Started</button>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <p class="footer-text">
-          Questions? Call <a href="tel:000-800-040-1843">000-800-040-1843</a>
-        </p>
-        <ul class="footer-links">
-          <div class="link-col1">
-            <li class="footer-link-item"><a href="#">FAQ</a></li>
-            <li class="footer-link-item"><a href="#">Investor Relations</a></li>
-            <li class="footer-link-item"><a href="#">Privacy</a></li>
-            <li class="footer-link-item"><a href="#">Speed Test</a></li>
-          </div>
-          <div class="link-col2">
-            <li class="footer-link-item"><a href="#">Help Centre</a></li>
-            <li class="footer-link-item"><a href="#">Jobs</a></li>
-            <li class="footer-link-item"><a href="#">Cookie Preferences</a></li>
-            <li class="footer-link-item"><a href="#">Legal Notices</a></li>
-          </div>
-          <div class="link-col3">
-            <li class="footer-link-item"><a href="#">Account</a></li>
-            <li class="footer-link-item"><a href="#">Ways to Watch</a></li>
-            <li class="footer-link-item"><a href="#">Corporate Information</a></li>
-            <li class="footer-link-item"><a href="#">Only on Netflix</a></li>
-          </div>
-          <div class="link-col4">
-            <li class="footer-link-item"><a href="#">Media Center</a></li>
-            <li class="footer-link-item"><a href="#">Terms of Use</a></li>
-            <li class="footer-link-item"><a href="#">Contact Us</a></li>
-          </div>
-        </ul>
-        <div class="lang-select">
-          <select name="language" id="lang">
-            <option value="eng">English</option>
-            <option value="hindi">Hindi</option>
-          </select>
         </div>
-        <div class="author-name">
-          <p class="author-text">Netflix India</p>
+      </section>
+
+      <section class="content-section">
+        <div class="section-wrapper">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What is Netflix?</span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Netflix is a streaming service that offers a wide variety of award-winning TV
+                  shows, movies, anime, documentaries, and more on thousands of internet-connected
+                  devices.
+                </p>
+                <p>
+                  Watch as much as you want, whenever you want, without ads—all for one low monthly
+                  price. New TV shows and movies are added every week.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>How much does Netflix cost?</span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device,
+                  all for one fixed monthly fee. Plans range from ₹149 to ₹649/month.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Where can I watch?</span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on
+                  the web at netflix.com or on any device that offers the Netflix app.
+                </p>
+                <p>
+                  Download your favorite shows with the iOS or Android app to watch offline. Take
+                  Netflix with you anywhere.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>How do I cancel?</span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Netflix is flexible. Cancel your account online in two clicks. No cancellation
+                  fees—start or stop anytime.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What can I watch on Netflix?</span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Netflix has an extensive library of feature films, documentaries, TV shows, anime,
+                  award-winning originals, and more. Watch as much as you want, anytime you want.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Is Netflix good for kids?</span>
+                <i class="fas fa-plus"></i>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  The Netflix Kids experience is included in your membership to provide parental
+                  control while kids enjoy family-friendly content in their own space.
+                </p>
+                <p>
+                  PIN-protected parental controls let you restrict content ratings and block
+                  specific titles you don't want kids to see.
+                </p>
+              </div>
+            </details>
+          </div>
         </div>
-        <p class="recaptcha-text">
-          This page is protected by Google reCAPTCHA to ensure you're not a bot.
-        </p>
-      </footer>
-    </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-wrapper">
+          <h2 class="cta-section__title">
+            Ready to watch? Enter your email to create or restart your membership.
+          </h2>
+          <form class="cta-form" method="post">
+            <div class="form-group__inline">
+              <div class="form-field">
+                <input
+                  type="email"
+                  class="input input--email"
+                  id="ctaEmail"
+                  placeholder=" "
+                  required
+                  aria-label="Email address"
+                />
+                <label for="ctaEmail" class="form-field__label">Email Address</label>
+              </div>
+              <button type="submit" class="button button--primary button--large">
+                Get Started
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__contact">
+          <p class="footer__text">
+            Questions? Call
+            <a href="tel:000-800-040-1843" class="footer__link">000-800-040-1843</a>
+          </p>
+        </div>
+
+        <nav class="footer__nav">
+          <ul class="footer__columns">
+            <li class="footer__column">
+              <ul class="footer__links">
+                <li><a href="#" class="footer__link">FAQ</a></li>
+                <li><a href="#" class="footer__link">Investor Relations</a></li>
+                <li><a href="#" class="footer__link">Privacy</a></li>
+                <li><a href="#" class="footer__link">Speed Test</a></li>
+              </ul>
+            </li>
+            <li class="footer__column">
+              <ul class="footer__links">
+                <li><a href="#" class="footer__link">Help Centre</a></li>
+                <li><a href="#" class="footer__link">Jobs</a></li>
+                <li><a href="#" class="footer__link">Cookie Preferences</a></li>
+                <li><a href="#" class="footer__link">Legal Notices</a></li>
+              </ul>
+            </li>
+            <li class="footer__column">
+              <ul class="footer__links">
+                <li><a href="#" class="footer__link">Account</a></li>
+                <li><a href="#" class="footer__link">Ways to Watch</a></li>
+                <li><a href="#" class="footer__link">Corporate Information</a></li>
+                <li><a href="#" class="footer__link">Only on Netflix</a></li>
+              </ul>
+            </li>
+            <li class="footer__column">
+              <ul class="footer__links">
+                <li><a href="#" class="footer__link">Media Center</a></li>
+                <li><a href="#" class="footer__link">Terms of Use</a></li>
+                <li><a href="#" class="footer__link">Contact Us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer__language-selector">
+          <div class="language-dropdown">
+            <i class="fas fa-globe-americas"></i>
+            <select
+              class="language-dropdown__select"
+              id="footerLanguage"
+              aria-label="Select language"
+            >
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="footer__meta">
+          <p class="footer__meta-text">Netflix Clone</p>
+          <p class="footer__meta-text footer__meta-text--small">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot.
+            <a href="#" class="footer__link">Learn more</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
