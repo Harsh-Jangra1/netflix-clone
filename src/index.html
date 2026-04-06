@@ -31,7 +31,20 @@
             <img src="./assets/images/logo.png" alt="Netflix Logo" class="navbar__logo-img" />
           </a>
 
-          <ul class="navbar__menu">
+          <button
+            class="navbar__toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-controls="primaryMenu"
+            aria-expanded="false"
+          >
+            <span class="navbar__toggle-line"></span>
+            <span class="navbar__toggle-line"></span>
+            <span class="navbar__toggle-line"></span>
+          </button>
+
+          <ul class="navbar__menu" id="primaryMenu">
             <li class="navbar__item navbar__item--dropdown">
               <button class="navbar__button navbar__button--language" id="languageToggle">
                 <i class="fas fa-globe-americas"></i>
@@ -91,6 +104,13 @@
         <div class="section-wrapper">
           <h2 class="section-title">Trending Now</h2>
           <div class="carousel-container">
+            <button
+              class="carousel-nav carousel-nav--prev carousel-nav--hidden"
+              type="button"
+              aria-label="Scroll movies left"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
             <ul class="carousel-list">
               <li class="carousel-item">
                 <article class="movie-card">
@@ -233,6 +253,13 @@
                 </article>
               </li>
             </ul>
+            <button
+              class="carousel-nav carousel-nav--next"
+              type="button"
+              aria-label="Scroll movies right"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -478,5 +505,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
